@@ -1,15 +1,18 @@
 header {
-  background-color: #f1f1f1;
+  background-color: navy;
   text-align: center;
   padding: 10px;
 }
-/* Style the topnav */
+p {
+  border: 2px solid skyblue;
+}
+/* Styling of the topnav */
 ul.topnav {
   display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: #333333;
+  background-color: #3fc5ff;
 }
 
 /* Style links in topnav */
