@@ -66,6 +66,77 @@ header p {
 .next {
     right: 20px;
 }
+/* Checklist Section */
+#checklist {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #eaeaea; /* Light grey background for contrast */
+}
+
+#checklist h2 {
+    font-size: 2.5em;
+    color: #001f3d;
+    margin-bottom: 30px;
+}
+
+/* Checklist container */
+.checklist-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Individual checklist item */
+.checklist-item {
+    position: relative;
+    width: 200px; /* Image size */
+    height: 300px;
+    cursor: pointer;
+}
+
+.checklist-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+/* Checkmark style */
+.checkmark {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid #001f3d; /* Navy border */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.checkmark:before {
+    content: '✔';
+    color: #001f3d;
+    font-size: 1.5em;
+}
+
+/* Style when the item is checked */
+.checklist-item.checked .checkmark {
+    opacity: 1;
+}
+
+/* Add a small hover effect */
+.checklist-item:hover .checklist-image {
+    opacity: 0.8;
+}
+
 
 /* Footer Styling */
 footer {
