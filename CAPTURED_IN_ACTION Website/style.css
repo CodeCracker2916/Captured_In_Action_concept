@@ -1,51 +1,83 @@
+/* Reworked css using a previous repository design */
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4F4F4; /* Light background for contrast */
+    color: #333; /* Default text color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header and text styling */
 header {
-  background-color: navy;
-  text-align: center;
-  padding: 10px;
-}
-p {
-  border: 2px solid skyblue;
-}
-/* Styling of the topnav */
-ul.topnav {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #3fc5ff;
+    background-color: #001f3d; /* Navy blue background */
+    color: white;
+    text-align: center;
+    padding: 50px 0;
 }
 
-/* Style links in topnav */
-ul.topnav li a {
-  display: block;
-  color: #f1f1f1;
-  padding: 14px 16px;
-  text-decoration: none;
+header h1 {
+    font-size: 3em;
+    margin: 0;
 }
 
-/* Change color on hover */
-ul.topnav li a:hover {
-  background-color: #dddddd;
-  color: black;
-}
-div.flex-container {
-  display: flex;
-  /* Show the flex items horizontally */
-  flex-direction: row;
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
 }
 
-div.flex-container > div {
-  margin: 10px;
+/* Slider styles */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px; /* Max width for large screens */
+    margin: 30px auto;
+    overflow: hidden;
 }
 
-/* Use media query and show the flex items vertically if screen width is less than 600px */
-@media screen and (max-width:600px) {
-  div.flex-container {
-    flex-direction: column;
-  }
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
+
+.slide {
+    width: 100%;
+    height: auto;
+}
+
+/* Navigation Buttons (optional) */
+.slider-container .prev, .slider-container .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 31, 61, 0.7); /* Semi-transparent navy */
+    color: white;
+    font-size: 2em;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* Footer Styling */
 footer {
-  background-color: #f1f1f1;
-  text-align: center;
-  padding: 8px;
+    text-align: center;
+    padding: 20px;
+    background-color: #001f3d;
+    color: white;
+    font-size: 0.9em;
+}
+
+/* Paragraph Styling */
+p {
+    margin: 20px;
+    line-height: 1.6;
 }
