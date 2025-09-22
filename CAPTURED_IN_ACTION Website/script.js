@@ -33,3 +33,11 @@ document.querySelector('.next').addEventListener('click', showNextSlide);
 // Initially, show the first slide
 updateSlider();
 
+// code for checklist concept ( might need to be reworked soon)
+
+document.querySelectorAll('.checklist-item').forEach(item => {
+    item.addEventListener('click', function() {
+        // Toggle the 'checked' class to show/hide the checkmark
+        item.classList.toggle('checked');
+    });
+});
