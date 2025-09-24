@@ -1,43 +1,55 @@
 // script.js
 
-//slider functionality 
+// ========================
+// Slider Functionality
+// ========================
+
+// Track the current slide index
 let currentSlide = 0;
+
+// Get all slide elements and total number of slides
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 
-// Function to move to the next slide
-function showNextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateSlider();
-}
+// Get the slider container element
+const slider = document.querySelector('.slider');
 
-// Function to move to the previous slide
-function showPrevSlide() {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    updateSlider();
-}
-
-// Function to update the slider's position
+// Function to update the slider position based on currentSlide index
 function updateSlider() {
-    const slider = document.querySelector('.slider');
-    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+  slider.style.transform = `translateX(-${currentSlide * 100}%)`;
 }
 
-// Set up automatic slider change every 5 seconds
-setInterval(showNextSlide, 5000);
+// Function to move to the next slide (loops back to first after last)
+function showNextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateSlider();
+}
 
-// Attach event listeners to the previous and next buttons
+// Function to move to the previous slide (loops to last if on first)
+function showPrevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateSlider();
+}
+
+// Attach event listeners to previous and next buttons
 document.querySelector('.prev').addEventListener('click', showPrevSlide);
 document.querySelector('.next').addEventListener('click', showNextSlide);
 
-// Initially, show the first slide
+// Automatically change slides every 5 seconds (5000 milliseconds)
+const slideInterval = setInterval(showNextSlide, 5000);
+
+// Initialize slider to show the first slide on page load
 updateSlider();
 
-// code for checklist concept ( might need to be reworked soon)
 
+// ========================
+// Checklist Functionality
+// ========================
+
+// Add click event to each checklist item to toggle 'checked' class
 document.querySelectorAll('.checklist-item').forEach(item => {
-    item.addEventListener('click', function() {
-        // Toggle the 'checked' class to show/hide the checkmark
-        item.classList.toggle('checked');
-    });
+  item.addEventListener('click', () => {
+    item.classList.toggle('checked');
+  });
 });
+
